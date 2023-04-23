@@ -1,0 +1,149 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Inter", sans-serif;
+  }
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .container {
+    @apply sm:max-w-[26rem] md:max-w-[96rem] md:px-2 sm:px-3 self-center;
+  }
+}
+
+/* Buttons (Start) */
+.btn-lg {
+  @apply px-6 py-3 border rounded-md text-lg outline-ascent border-ascent bg-ascent font-medium text-white relative  active:ring-2 ring-offset-2 hover:bg-ascent-dark active:bg-ascent-dark;
+}
+.btn-md {
+  @apply px-5 py-3 border rounded-md text-sm outline-ascent border-ascent bg-ascent font-medium text-white relative  active:ring-2 ring-offset-2 hover:bg-ascent-dark active:bg-ascent-dark;
+}
+
+.btn-md-delete {
+  @apply px-5 py-3 border rounded-md text-sm outline-ascent border-red-400 bg-red-400 font-medium text-white relative  active:ring-2 ring-offset-2 hover:bg-red-500 active:bg-red-600;
+}
+.btn-sm {
+  @apply px-4 py-2 border rounded-md text-xs outline-ascent border-ascent bg-ascent font-medium text-white relative  active:ring-2 ring-offset-2 hover:bg-ascent-dark active:bg-ascent-dark;
+}
+
+.btn-secondary-lg {
+  @apply px-6 py-3 border rounded-md text-lg outline-ascent font-medium text-slate-800 relative active:ring-ascent-dark active:ring-2 ring-offset-2 hover:bg-ascent-dark active:bg-ascent-dark border-opacity-10 hover:text-white;
+}
+.btn-secondary-md {
+  @apply px-5 py-3 border rounded-md text-sm outline-ascent font-medium text-slate-800 relative active:ring-ascent-dark active:ring-2 ring-offset-2 hover:bg-ascent-dark active:bg-ascent-dark border-opacity-10 hover:text-white;
+}
+.btn-secondary-sm {
+  @apply px-4 py-2 border rounded-md text-xs outline-ascent font-medium text-slate-800 relative active:ring-ascent-dark active:ring-2 ring-offset-2 hover:bg-ascent-dark active:bg-ascent-dark border-opacity-10 hover:text-white;
+}
+.btn-danger-lg {
+  @apply px-6 py-3 border rounded-md text-lg bg-red-600 outline-red-700 font-medium text-red-800 relative active:ring-red-700 active:ring-2 ring-offset-2 hover:bg-red-800 active:bg-red-800 border-opacity-10 text-white;
+}
+.btn-danger-md {
+  @apply px-5 py-3 border rounded-md text-sm bg-red-600 outline-red-700 font-medium text-red-800 relative active:ring-red-700 active:ring-2 ring-offset-2 hover:bg-red-800 active:bg-red-800 border-opacity-10 text-white;
+}
+.btn-danger-sm {
+  @apply px-4 py-2 border rounded-md text-xs bg-red-600 outline-red-700 font-medium text-red-800 relative active:ring-red-700 active:ring-2 ring-offset-2 hover:bg-red-800 active:bg-red-800 border-opacity-10 text-white;
+}
+button[disabled] {
+  @apply opacity-70;
+}
+/* Buttons (End) */
+
+/* Input (Start) */
+.input-lg {
+  @apply px-6 py-3 border rounded-md text-lg outline-ascent border-slate-300 font-medium;
+}
+.input-md {
+  @apply px-5 py-3 border rounded-md text-sm outline-ascent border-slate-300 font-medium;
+}
+.input-sm {
+  @apply px-4 py-2 border rounded-md text-xs outline-ascent border-slate-300 font-medium;
+}
+select.input-md {
+  @apply bg-white;
+}
+.input-lg.input-invalid,
+.input-md.input-invalid,
+.input-sm.input-invalid {
+  @apply border-red-600;
+}
+.input-label {
+  @apply text-xs font-medium text-slate-800 mb-2 text-left;
+}
+.input-error {
+  @apply text-xs mt-2 text-red-600 font-medium text-left;
+}
+input[type="radio"] {
+  @apply w-4 h-4 text-ascent bg-gray-100 border-gray-300 focus:ring-ascent dark:focus:ring-ascent dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600;
+}
+input[type="checkbox"] {
+  @apply appearance-none h-4 w-4 border border-gray-300 rounded bg-white checked:border-ascent checked:bg-ascent focus:outline-none transition duration-200 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer text-white;
+}
+input[type="checkbox"]:checked {
+  background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='111827' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+}
+input:read-only {
+  @apply bg-slate-200;
+}
+/* Input (End) */
+
+section#section {
+  @apply relative w-[100%];
+}
+aside#sidebar {
+  @apply tablet:relative sm:fixed tablet:w-[18%] sm:w-[100%] tablet:ml-[0%] sm:ml-[-100%] bg-white;
+}
+aside#sidebar.active {
+  @apply tablet:relative sm:fixed tablet:w-[18%] sm:w-[100%] tablet:ml-[-18%] sm:ml-[0%] z-30;
+}
+
+/* Alert Boxes (Start) */
+.alert-success-md {
+  @apply p-3 bg-green-200 text-green-900 rounded flex items-center justify-center space-x-3;
+}
+.alert-success-md svg {
+  @apply h-4 w-4 stroke-2;
+}
+.alert-success-md span {
+  @apply font-medium text-sm;
+}
+
+.table-div > div {
+  overflow: visible !important;
+}
+
+.Savebtn {
+  text-decoration: none;
+  border: none;
+  padding: 12px 40px;
+  font-size: 16px;
+  background-color: rgb(3, 185, 3);
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  outline: none;
+  transition: 0.2s all;
+}
+/* Adding transformation when the button is active */
+
+.Savebtn:active {
+  transform: scale(0.98);
+  /* Scaling button to 0.98 to its original size */
+  box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  /* Lowering the shadow */
+}
+
+.dashboard-tab {
+  @apply bg-white font-medium h-auto relative px-5 py-4 hover:bg-slate-200 flex items-center justify-center whitespace-nowrap;
+}
